@@ -1,0 +1,13 @@
+import puppeteer from "puppeteer";
+const browser = await puppeteer.launch({headless:false,executablePath:"/home/latte/.cache/puppeteer/chrome/linux-152.0.7977.75/chrome-linux64/chrome",args:["--no-sandbox","--disable-setuid-sandbox","--disable-features=WebGPU","--use-gl=angle","--use-angle=swiftshader","--window-size=1600,1000"]});
+const page = await browser.newPage();
+await page.setViewport({width:1600,height:1000});
+const logs=[];
+page.on("response",r=>{ if(r.status()>=400) logs.push("HTTP "+r.status()+" "+r.url()); });
+page.on("requestfailed",r=>logs.push("FAIL "+r.url()+" "+(r.failure()?.errorText||"")));
+await page.goto("http://127.0.0.1:4173/?scene=your-house&pos=9.5,1.6,4.2&target=5.5,1.1,9.5",{waitUntil:"networkidle0",timeout:90000}).catch(e=>logs.push("goto "+e.message));
+await page.waitForFunction("window.__sceneReady === true",{timeout:120000}).catch(()=>{});
+await new Promise(r=>setTimeout(r,6000));
+console.log(logs.join("\n")||"no failures");
+await page.screenshot({path:"/tmp/app-debug2.png"});
+await browser.close();

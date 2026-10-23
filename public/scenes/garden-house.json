@@ -1,0 +1,562 @@
+{
+  "nodes": {
+    "site_garden": {
+      "object": "node",
+      "id": "site_garden",
+      "type": "site",
+      "parentId": null,
+      "visible": true,
+      "metadata": {},
+      "polygon": {
+        "type": "polygon",
+        "points": [
+          [
+            -15,
+            -15
+          ],
+          [
+            15,
+            -15
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            -15,
+            15
+          ]
+        ]
+      },
+      "children": [
+        "building_garden"
+      ]
+    },
+    "building_garden": {
+      "object": "node",
+      "id": "building_garden",
+      "type": "building",
+      "parentId": "site_garden",
+      "visible": true,
+      "metadata": {},
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "children": [
+        "level_0"
+      ]
+    },
+    "door_front": {
+      "object": "node",
+      "id": "door_front",
+      "type": "door",
+      "parentId": "wall_s",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_s",
+      "position": [
+        0,
+        1.05,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 1,
+      "height": 2.1,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "threshold": true,
+      "thresholdHeight": 0.02,
+      "hingesSide": "left",
+      "swingDirection": "inward",
+      "segments": [
+        {
+          "type": "panel",
+          "heightRatio": 0.5,
+          "columnRatios": [
+            1
+          ],
+          "dividerThickness": 0.03,
+          "panelDepth": 0.01,
+          "panelInset": 0.04
+        },
+        {
+          "type": "panel",
+          "heightRatio": 0.5,
+          "columnRatios": [
+            1
+          ],
+          "dividerThickness": 0.03,
+          "panelDepth": 0.01,
+          "panelInset": 0.04
+        }
+      ],
+      "handle": true,
+      "handleHeight": 1.05,
+      "handleSide": "right",
+      "contentPadding": [
+        0.04,
+        0.04
+      ],
+      "doorCloser": false,
+      "panicBar": false,
+      "panicBarHeight": 1
+    },
+    "door_garden": {
+      "object": "node",
+      "id": "door_garden",
+      "type": "door",
+      "parentId": "wall_n",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_n",
+      "position": [
+        0,
+        1.05,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 1.6,
+      "height": 2.1,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "threshold": true,
+      "thresholdHeight": 0.02,
+      "hingesSide": "left",
+      "swingDirection": "inward",
+      "segments": [
+        {
+          "type": "panel",
+          "heightRatio": 0.5,
+          "columnRatios": [
+            1
+          ],
+          "dividerThickness": 0.03,
+          "panelDepth": 0.01,
+          "panelInset": 0.04
+        },
+        {
+          "type": "panel",
+          "heightRatio": 0.5,
+          "columnRatios": [
+            1
+          ],
+          "dividerThickness": 0.03,
+          "panelDepth": 0.01,
+          "panelInset": 0.04
+        }
+      ],
+      "handle": true,
+      "handleHeight": 1.05,
+      "handleSide": "right",
+      "contentPadding": [
+        0.04,
+        0.04
+      ],
+      "doorCloser": false,
+      "panicBar": false,
+      "panicBarHeight": 1
+    },
+    "window_s1": {
+      "object": "node",
+      "id": "window_s1",
+      "type": "window",
+      "parentId": "wall_s",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_s",
+      "position": [
+        0,
+        1.2,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 1.2,
+      "height": 1.2,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "columnRatios": [
+        1
+      ],
+      "rowRatios": [
+        1
+      ],
+      "columnDividerThickness": 0.03,
+      "rowDividerThickness": 0.03,
+      "sill": true,
+      "sillDepth": 0.08,
+      "sillThickness": 0.03
+    },
+    "window_s2": {
+      "object": "node",
+      "id": "window_s2",
+      "type": "window",
+      "parentId": "wall_s",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_s",
+      "position": [
+        0,
+        1.2,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 1.2,
+      "height": 1.2,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "columnRatios": [
+        1
+      ],
+      "rowRatios": [
+        1
+      ],
+      "columnDividerThickness": 0.03,
+      "rowDividerThickness": 0.03,
+      "sill": true,
+      "sillDepth": 0.08,
+      "sillThickness": 0.03
+    },
+    "window_e": {
+      "object": "node",
+      "id": "window_e",
+      "type": "window",
+      "parentId": "wall_e",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_e",
+      "position": [
+        0,
+        1.2,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 1,
+      "height": 1.2,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "columnRatios": [
+        1
+      ],
+      "rowRatios": [
+        1
+      ],
+      "columnDividerThickness": 0.03,
+      "rowDividerThickness": 0.03,
+      "sill": true,
+      "sillDepth": 0.08,
+      "sillThickness": 0.03
+    },
+    "window_w": {
+      "object": "node",
+      "id": "window_w",
+      "type": "window",
+      "parentId": "wall_w",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_w",
+      "position": [
+        0,
+        1.2,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 1,
+      "height": 1.2,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "columnRatios": [
+        1
+      ],
+      "rowRatios": [
+        1
+      ],
+      "columnDividerThickness": 0.03,
+      "rowDividerThickness": 0.03,
+      "sill": true,
+      "sillDepth": 0.08,
+      "sillThickness": 0.03
+    },
+    "wall_n": {
+      "object": "node",
+      "id": "wall_n",
+      "type": "wall",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "children": [
+        "door_garden"
+      ],
+      "thickness": 0.15,
+      "start": [
+        -6,
+        -4
+      ],
+      "end": [
+        6,
+        -4
+      ],
+      "frontSide": "unknown",
+      "backSide": "unknown"
+    },
+    "wall_e": {
+      "object": "node",
+      "id": "wall_e",
+      "type": "wall",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "children": [
+        "window_e"
+      ],
+      "thickness": 0.15,
+      "start": [
+        6,
+        -4
+      ],
+      "end": [
+        6,
+        4
+      ],
+      "frontSide": "unknown",
+      "backSide": "unknown"
+    },
+    "wall_s": {
+      "object": "node",
+      "id": "wall_s",
+      "type": "wall",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "children": [
+        "door_front",
+        "window_s1",
+        "window_s2"
+      ],
+      "thickness": 0.15,
+      "start": [
+        6,
+        4
+      ],
+      "end": [
+        -6,
+        4
+      ],
+      "frontSide": "unknown",
+      "backSide": "unknown"
+    },
+    "wall_w": {
+      "object": "node",
+      "id": "wall_w",
+      "type": "wall",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "children": [
+        "window_w"
+      ],
+      "thickness": 0.15,
+      "start": [
+        -6,
+        4
+      ],
+      "end": [
+        -6,
+        -4
+      ],
+      "frontSide": "unknown",
+      "backSide": "unknown"
+    },
+    "zone_living": {
+      "object": "node",
+      "id": "zone_living",
+      "type": "zone",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "name": "Living",
+      "color": "#60a5fa",
+      "polygon": [
+        [
+          -6,
+          -4
+        ],
+        [
+          6,
+          -4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          -6,
+          4
+        ]
+      ]
+    },
+    "zone_garden": {
+      "object": "node",
+      "id": "zone_garden",
+      "type": "zone",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "name": "Back garden",
+      "color": "#86efac",
+      "polygon": [
+        [
+          -6,
+          -10
+        ],
+        [
+          6,
+          -10
+        ],
+        [
+          6,
+          -4
+        ],
+        [
+          -6,
+          -4
+        ]
+      ]
+    },
+    "fence_n": {
+      "object": "node",
+      "id": "fence_n",
+      "type": "fence",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "start": [
+        -6,
+        -10
+      ],
+      "end": [
+        6,
+        -10
+      ],
+      "height": 1.8,
+      "thickness": 0.08,
+      "baseHeight": 0.22,
+      "postSpacing": 2,
+      "postSize": 0.1,
+      "topRailHeight": 0.04,
+      "groundClearance": 0,
+      "edgeInset": 0.015,
+      "baseStyle": "grounded",
+      "color": "#f3f4f6",
+      "style": "privacy"
+    },
+    "fence_e": {
+      "object": "node",
+      "id": "fence_e",
+      "type": "fence",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "start": [
+        6,
+        -10
+      ],
+      "end": [
+        6,
+        -4
+      ],
+      "height": 1.8,
+      "thickness": 0.08,
+      "baseHeight": 0.22,
+      "postSpacing": 2,
+      "postSize": 0.1,
+      "topRailHeight": 0.04,
+      "groundClearance": 0,
+      "edgeInset": 0.015,
+      "baseStyle": "grounded",
+      "color": "#f3f4f6",
+      "style": "privacy"
+    },
+    "fence_w": {
+      "object": "node",
+      "id": "fence_w",
+      "type": "fence",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "start": [
+        -6,
+        -4
+      ],
+      "end": [
+        -6,
+        -10
+      ],
+      "height": 1.8,
+      "thickness": 0.08,
+      "baseHeight": 0.22,
+      "postSpacing": 2,
+      "postSize": 0.1,
+      "topRailHeight": 0.04,
+      "groundClearance": 0,
+      "edgeInset": 0.015,
+      "baseStyle": "grounded",
+      "color": "#f3f4f6",
+      "style": "privacy"
+    },
+    "level_0": {
+      "object": "node",
+      "id": "level_0",
+      "type": "level",
+      "parentId": "building_garden",
+      "visible": true,
+      "metadata": {},
+      "level": 0,
+      "height": 2.7,
+      "children": [
+        "wall_n",
+        "wall_e",
+        "wall_s",
+        "wall_w",
+        "zone_living",
+        "zone_garden",
+        "fence_n",
+        "fence_e",
+        "fence_w"
+      ]
+    }
+  },
+  "rootNodeIds": [
+    "site_garden"
+  ]
+}

@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
+<title>户型方案 · 三套风格 | 平面与 3D</title>
+<style>
+  :root {
+    --ink: #24231f;
+    --ink-2: #4c4842;
+    --muted: #7d776c;
+    --line: #ded8cc;
+    --paper: #f8f5ee;
+    --white: #fffdf9;
+    --wood: #a87f56;
+    --accent: #2f4a3f;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 34px; }
+  header.nav {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(248,245,238,.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-in { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+  .brand { font-family: "Noto Serif SC", "Songti SC", STSong, serif; font-size: 17px; letter-spacing: .14em; font-weight: 600; }
+  .brand small { display: block; font-family: inherit; font-size: 9px; letter-spacing: .3em; color: var(--muted); font-weight: 400; }
+  .nav-links { display: flex; gap: 24px; font-size: 12.5px; letter-spacing: .08em; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--ink-2); padding-bottom: 3px; border-bottom: 1px solid transparent; }
+  .nav-links a:hover { border-color: var(--ink); }
+  .nav-cta { border: 1px solid var(--ink) !important; padding: 8px 16px !important; border-radius: 2px; font-size: 12px; text-decoration: none; }
+  .nav-cta:hover { background: var(--ink); color: var(--paper); }
+
+  .cover { padding: 68px 0 42px; }
+  .kicker { font-size: 11px; letter-spacing: .34em; color: var(--wood); text-transform: uppercase; margin-bottom: 18px; }
+  h1 {
+    font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+    font-weight: 600; font-size: clamp(34px, 5vw, 58px); line-height: 1.18; letter-spacing: .02em; margin: 0 0 20px;
+  }
+  h1 em { font-style: normal; color: var(--wood); }
+  .cover-sub { max-width: 720px; color: var(--ink-2); font-size: 15px; }
+  .meta {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--line); border: 1px solid var(--line); margin: 34px 0 0;
+  }
+  .meta div { background: var(--white); padding: 18px 20px; }
+  .meta b { display: block; font-family: "Noto Serif SC", serif; font-size: 21px; font-weight: 600; letter-spacing: .03em; }
+  .meta span { font-size: 10.5px; letter-spacing: .16em; color: var(--muted); }
+  .hero { margin-top: 30px; position: relative; overflow: hidden; border-radius: 2px; background: #ddd; }
+  .hero img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; transition: opacity .35s ease; }
+  .hero figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 26px;
+    background: linear-gradient(transparent, rgba(20,20,18,.72)); color: #fff;
+    font-size: 12px; letter-spacing: .16em; display: flex; justify-content: space-between; gap: 16px;
+  }
+  .hero .badge {
+    position: absolute; top: 18px; left: 18px; background: rgba(248,245,238,.92); color: var(--ink);
+    padding: 6px 12px; font-size: 10.5px; letter-spacing: .18em;
+  }
+  section { padding: 70px 0; border-top: 1px solid var(--line); }
+  .sec-head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 28px; }
+  .sec-no { font-family: "Noto Serif SC", serif; font-size: 46px; color: var(--wood); line-height: 1; opacity: .55; }
+  h2 { font-family: "Noto Serif SC", "Songti SC", STSong, serif; font-weight: 600; font-size: 28px; letter-spacing: .04em; margin: 0; }
+  .sec-en { font-size: 10px; letter-spacing: .3em; color: var(--muted); margin-left: auto; text-transform: uppercase; }
+  h3 { font-family: "Noto Serif SC", serif; font-size: 17px; font-weight: 600; margin: 0 0 6px; letter-spacing: .02em; }
+
+  .styles-sec { background: var(--white); }
+  .style-intro { max-width: 720px; margin: -8px 0 26px; color: var(--ink-2); font-size: 13.5px; }
+  .style-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  button.style-card {
+    appearance: none; border: 1px solid var(--line); background: var(--paper);
+    padding: 0; text-align: left; cursor: pointer; color: inherit; font: inherit; border-radius: 2px;
+    display: flex; flex-direction: column; transition: border-color .25s, box-shadow .25s, transform .25s;
+  }
+  button.style-card:hover { transform: translateY(-2px); border-color: #b6ad9d; }
+  .style-card .thumb { display: block; position: relative; overflow: hidden; background: #ddd; }
+  .style-card .thumb img { width: 100%; display: block; aspect-ratio: 3/2; object-fit: cover; transition: transform .6s ease; }
+  .style-card:hover .thumb img { transform: scale(1.035); }
+  .style-card .num {
+    position: absolute; top: 12px; left: 12px; background: rgba(20,20,18,.66); color: #fff;
+    font-family: "Noto Serif SC", serif; font-size: 12px; letter-spacing: .1em; padding: 4px 9px;
+  }
+  .style-card .card-body { display: block; padding: 16px 18px 18px; }
+  .style-card .tag { font-size: 9.5px; letter-spacing: .22em; color: var(--wood); display: block; margin-bottom: 4px; }
+  .style-card b { font-family: "Noto Serif SC", serif; font-size: 20px; font-weight: 600; display: block; letter-spacing: .04em; }
+  .style-card .desc { display: block; color: var(--ink-2); font-size: 12.5px; line-height: 1.7; margin-top: 6px; min-height: 44px; }
+  .chips { display: flex; gap: 6px; margin-top: 12px; }
+  .chips i { width: 20px; height: 20px; border-radius: 50%; border: 1px solid rgba(0,0,0,.08); display: block; }
+  .card-cta { display: inline-block; margin-top: 14px; font-size: 10.5px; letter-spacing: .16em; border-bottom: 1px solid currentColor; color: var(--ink-2); }
+  .style-card.is-active { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+  .style-card.is-active .num { background: var(--ink); }
+  .style-card.is-active .card-cta::after { content: " 当前"; color: var(--wood); }
+  .style-hint { margin: 16px 0 0; color: var(--muted); font-size: 11.5px; letter-spacing: .05em; }
+
+  .strategy { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .strategy article { background: var(--white); padding: 26px 28px 24px; }
+  .strategy p { margin: 0; color: var(--ink-2); font-size: 13.5px; }
+  .tag { display: inline-block; font-size: 9.5px; letter-spacing: .2em; color: var(--wood); margin-bottom: 10px; }
+
+  .plan-figure { background: var(--white); border: 1px solid var(--line); padding: 26px; }
+  .plan-figure img { width: 100%; display: block; }
+  .plan-figure figcaption { margin-top: 16px; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 11.5px; letter-spacing: .06em; }
+  .plan-figure a { color: var(--ink-2); }
+
+  .gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+  figure.shot { margin: 0; grid-column: span 6; background: var(--white); border: 1px solid var(--line); }
+  figure.shot.wide { grid-column: span 12; }
+  figure.shot img { width: 100%; display: block; aspect-ratio: 3/2; object-fit: cover; background: #e9e4da; }
+  figure.shot.wide img { aspect-ratio: 16/8.6; }
+  figure.shot figcaption { padding: 14px 16px 15px; display: flex; gap: 14px; align-items: baseline; }
+  figure.shot b { font-family: "Noto Serif SC", serif; font-weight: 600; font-size: 14px; white-space: nowrap; }
+  figure.shot span { color: var(--muted); font-size: 11.5px; line-height: 1.6; }
+
+  .materials { display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: start; }
+  .swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .swatch { border: 1px solid var(--line); background: var(--white); }
+  .swatch i { display: block; height: 76px; }
+  .swatch div { padding: 10px 12px 12px; }
+  .swatch b { font-size: 12px; font-weight: 600; display: block; }
+  .swatch span { font-size: 10.5px; color: var(--muted); }
+  .spec { margin: 0; padding: 0; list-style: none; }
+  .spec li { display: flex; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .spec li:first-child { border-top: 1px solid var(--line); }
+  .spec b { width: 74px; flex: none; color: var(--muted); font-weight: 400; font-size: 11.5px; letter-spacing: .1em; }
+
+  .notes { counter-reset: n; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 44px; }
+  .notes p { counter-increment: n; margin: 0; padding: 16px 0 16px 42px; border-top: 1px solid var(--line); position: relative; color: var(--ink-2); font-size: 13.5px; }
+  .notes p::before {
+    content: "0" counter(n); position: absolute; left: 0; top: 18px;
+    font-family: "Noto Serif SC", serif; font-size: 14px; color: var(--wood);
+  }
+  .cta-band { background: var(--accent); color: #f3efe5; padding: 46px 0; transition: background .3s; }
+  .cta-in { display: flex; align-items: center; justify-content: space-between; gap: 26px; flex-wrap: wrap; }
+  .cta-in h2 { color: #f3efe5; font-size: 24px; }
+  .cta-in p { margin: 6px 0 0; color: rgba(243,239,229,.72); font-size: 12.5px; letter-spacing: .06em; }
+  .btn {
+    display: inline-block; text-decoration: none; border: 1px solid rgba(243,239,229,.6);
+    padding: 13px 24px; font-size: 12px; letter-spacing: .16em; border-radius: 2px;
+  }
+  .btn:hover { background: #f3efe5; color: var(--accent); }
+  footer { padding: 34px 0 46px; color: var(--muted); font-size: 11px; letter-spacing: .08em; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+  @media (max-width: 980px) {
+    .style-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 860px) {
+    .wrap { padding: 0 20px; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .meta { grid-template-columns: repeat(2, 1fr); }
+    .strategy, .materials, .notes { grid-template-columns: 1fr; }
+    .style-grid { grid-template-columns: 1fr; }
+    figure.shot { grid-column: span 12; }
+    .cover { padding-top: 44px; }
+    section { padding: 52px 0; }
+    .sec-en { display: none; }
+    .plan-figure { padding: 12px; }
+    .hero figcaption { flex-direction: column; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <div class="brand">我的小区 · 户型方案<small>INTERIOR STUDY 2026</small></div>
+    <nav class="nav-links">
+      <a href="#styles">三套风格</a>
+      <a href="#strategy">设计策略</a>
+      <a href="#plan">平面布置</a>
+      <a href="#spaces">空间效果</a>
+      <a href="#materials">材质灯光</a>
+      <a class="nav-cta" href="./?scene=your-house-warm&pos=9.7,1.65,6.3&target=4.4,1.0,8.8" data-scene-link>进入 3D &rarr;</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap cover">
+    <div class="kicker">MY HOME · INTERIOR STUDY</div>
+    <h1>同一套户型，<br />三种<em>住进去的样子</em></h1>
+    <p class="cover-sub">
+      这是一套四室两厅两卫的户型（当前实例 143㎡）。硬装基底与家具布局不变，
+      我们做了三套可直接落地的软装与材质方案：奶油暖木、现代灰调、深色雅奢。
+      点选任一风格，下方效果图、材质清单与 3D 入口会整套切换。
+    </p>
+    <div class="meta">
+      <div><b>143 ㎡</b><span>当前实例面积</span></div>
+      <div><b>4 室 2 厅 2 卫</b><span>户型</span></div>
+      <div><b>13.6 × 11.0 m</b><span>当前实例尺度</span></div>
+      <div><b id="style-meta-value">奶油暖木</b><span id="style-meta-sub">Warm Cream · 暖木白</span></div>
+    </div>
+    <figure class="hero">
+      <span class="badge" id="hero-badge">当前方案 · 奶油暖木</span>
+      <img id="hero-image" src="renders/warm/living.png" data-shot="living" alt="客厅效果图：沙发面向西侧电视墙" />
+      <figcaption><span id="hero-caption">客厅 · 奶油暖木：米白墙、橡木与亚麻，午后光落在沙发上</span><span>方案效果图 · 可切换风格</span></figcaption>
+    </figure>
+  </div>
+
+  <section id="styles" class="styles-sec">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-no">00</span><h2>三套风格方案</h2><span class="sec-en">Three Directions</span></div>
+      <p class="style-intro">
+        同一套平面、同一组家具尺度，只更换墙面、地面、木作、布艺与金属的颜色和质感。
+        三套方案都按样板间标准完成软装陈设，可直接作为选材与预算的讨论底稿。
+      </p>
+      <div class="style-grid">
+        <button class="style-card" data-style="warm" aria-pressed="true">
+          <span class="thumb"><img src="renders/warm/living.png" alt="奶油暖木风格客厅" /><span class="num">01</span></span>
+          <span class="card-body">
+            <span class="tag">WARM CREAM</span>
+            <b>奶油暖木</b>
+            <span class="desc">米白墙面、浅橡木、亚麻与陶土色点缀。最稳妥，也最耐看，适合有孩子、需要长期居住的家。</span>
+            <span class="chips"><i style="background:#e7ddcc"></i><i style="background:#b18a5f"></i><i style="background:#d8cebb"></i><i style="background:#9c563d"></i></span>
+            <span class="card-cta">切换整套</span>
+          </span>
+        </button>
+        <button class="style-card" data-style="grey" aria-pressed="false">
+          <span class="thumb"><img src="renders/grey/living.png" alt="现代灰调风格客厅" /><span class="num">02</span></span>
+          <span class="card-body">
+            <span class="tag">MODERN GREY</span>
+            <b>现代灰调</b>
+            <span class="desc">冷灰墙、烟熏橡木、黑色金属与锈橙点缀。克制、利落，适合喜欢低饱和与秩序感的家庭。</span>
+            <span class="chips"><i style="background:#dcdcd7"></i><i style="background:#7d6a58"></i><i style="background:#85827b"></i><i style="background:#8a5a3e"></i></span>
+            <span class="card-cta">切换整套</span>
+          </span>
+        </button>
+        <button class="style-card" data-style="dark" aria-pressed="false">
+          <span class="thumb"><img src="renders/dark/living.png" alt="深色雅奢风格客厅" /><span class="num">03</span></span>
+          <span class="card-body">
+            <span class="tag">DARK LUXE</span>
+            <b>深色雅奢</b>
+            <span class="desc">暖灰墙、深胡桃、墨绿丝绒与黄铜。光线暗下来时最有包裹感，适合作为第二居所或改善型主宅。</span>
+            <span class="chips"><i style="background:#cfc6b7"></i><i style="background:#4c3827"></i><i style="background:#46564a"></i><i style="background:#b08a52"></i></span>
+            <span class="card-cta">切换整套</span>
+          </span>
+        </button>
+      </div>
+      <p class="style-hint">点击任一风格，下方 8 张效果图、材质清单与 3D 场景会同步切换。</p>
+    </div>
+  </section>
+
+  <section id="strategy">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-no">01</span><h2>设计策略</h2><span class="sec-en">Design Strategy</span></div>
+      <div class="strategy">
+        <article>
+          <span class="tag">动线 / CIRCULATION</span>
+          <h3>入户不穿厅，厨房不绕桌</h3>
+          <p>入户门位于东侧中段，进门即见客餐厅；餐桌与门扇保持 2.4m 距离，沿东墙留出 2.1m 宽的入户—厨房通道。餐桌纵向布置，偏离厨房洞口东半侧，出菜与端菜不再绕行。</p>
+        </article>
+        <article>
+          <span class="tag">视轴 / SIGHT LINE</span>
+          <h3>一条 4.5m 的视听轴线</h3>
+          <p>西侧整面石材电视墙 + 悬空电视柜，沙发靠东纵向摆放，视线正对电视；茶几与地毯收在同一轴线上，南向 6.2m 大窗作为背景光，白天不拉帘也看得清。</p>
+        </article>
+        <article>
+          <span class="tag">餐厨 / KITCHEN &amp; DINING</span>
+          <h3>开放厨房 + 纵向长桌</h3>
+          <p>厨房沿北墙一字布置 2.5m 橱柜、水槽与灶台，冰箱归位东墙；吊柜与柜底灯带补足收纳和操作照明。南侧 3.6m 无门洞口，餐桌 2.4m 纵向放置，六把餐椅分列两侧，形成“备餐—上菜—用餐”的短动线。</p>
+        </article>
+        <article>
+          <span class="tag">收纳 / STORAGE</span>
+          <h3>每个房间都有自己的柜子</h3>
+          <p>四间卧室均设通高衣柜：北向两间沿南墙、主卧沿西墙、南次卧沿北墙，全部避开门扇开启；东墙 2.3m 书柜与 1.6m 书桌组成第二工作区，玄关外置洗手台让公卫干湿分离。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="plan">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-no">02</span><h2>平面布置图</h2><span class="sec-en">Furniture Plan · 1:50</span></div>
+      <figure class="plan-figure">
+        <a href="renders/plan.svg" target="_blank" rel="noopener"><img src="renders/plan.png" alt="户型平面布置图，含轴网、尺寸与家具" /></a>
+        <figcaption>
+          <span>轴线尺寸 3800 / 6600 / 3200；进深 1100 / 2400 / 1400 / 1500 / 3500 / 1100（mm）</span>
+          <a href="renders/plan.svg" target="_blank" rel="noopener">打开矢量图 &nearr;</a>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="spaces">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-no">03</span><h2>空间效果</h2><span class="sec-en">Interior Views</span></div>
+      <div class="gallery">
+        <figure class="shot wide">
+          <img data-shot="overview" loading="lazy" src="renders/warm/overview.png" alt="整体鸟瞰" />
+          <figcaption><b>鸟瞰</b><span>四室两厅两卫，南向阳台 + 东南露台的 L 形轮廓；三套风格共用同一平面。</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <img data-shot="living" loading="lazy" src="renders/warm/living.png" alt="客厅" />
+          <figcaption><b>客厅</b><span>沙发面向西侧电视墙，茶几落在 3.6×2.6m 地毯上，南窗与阳台绿植形成背景。</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <img data-shot="dining" loading="lazy" src="renders/warm/dining.png" alt="餐厅" />
+          <figcaption><b>餐厅</b><span>2.4m 长桌纵向布置，六椅分列两侧；线性吊灯压住桌面，背后是主卧门与开放厨房。</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <img data-shot="kitchen" loading="lazy" src="renders/warm/kitchen.png" alt="厨房" />
+          <figcaption><b>厨房</b><span>2.5m 橱柜含水槽与灶台，冰箱与高柜归位东墙；柜底灯带补足操作照明。</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <img data-shot="tvwall" loading="lazy" src="renders/warm/tvwall.png" alt="电视墙" />
+          <figcaption><b>电视墙</b><span>西墙 2.6m 整幅石材，悬空柜离地 25cm，柜底灯带与侧向木格栅拉出层次。</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <img data-shot="master" loading="lazy" src="renders/warm/master.png" alt="主卧" />
+          <figcaption><b>主卧</b><span>床头靠西，衣柜沿西墙北段，避开主卫门与南窗；床尾凳与地毯收住动线。</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <img data-shot="bedroom" loading="lazy" src="renders/warm/bedroom.png" alt="北次卧" />
+          <figcaption><b>北次卧</b><span>床头靠北窗，1.5m 床与 0.45m 床头柜留出通行；衣柜沿南墙，避开门扇。</span></figcaption>
+        </figure>
+        <figure class="shot wide">
+          <img data-shot="plan3d" loading="lazy" src="renders/warm/plan3d.png" alt="3D 俯视" />
+          <figcaption><b>3D 俯视</b><span>取消顶面后的家具布置，可对照平面图核对尺度；在 3D 场景中可旋转查看。</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="materials">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-no">04</span><h2>材质与灯光</h2><span class="sec-en">Materials &amp; Lighting</span></div>
+      <div class="materials">
+        <div class="swatches" id="swatches">
+          <div class="swatch"><i style="background:#e7ddcc"></i><div><b>暖白乳胶漆</b><span>全屋墙面 / 顶面</span></div></div>
+          <div class="swatch"><i style="background:#ded2be"></i><div><b>柔光地砖</b><span>全屋通铺 · 750×1500</span></div></div>
+          <div class="swatch"><i style="background:#c9beac"></i><div><b>莱姆石岩板</b><span>电视墙 / 台面</span></div></div>
+          <div class="swatch"><i style="background:#b18a5f"></i><div><b>浅橡木</b><span>书柜 / 餐桌 / 衣柜</span></div></div>
+          <div class="swatch"><i style="background:#d8cebb"></i><div><b>棉麻布艺</b><span>沙发 / 窗帘 / 床品</span></div></div>
+          <div class="swatch"><i style="background:#a9854e"></i><div><b>黄铜五金</b><span>灯具 / 拉手 / 收边</span></div></div>
+        </div>
+        <div>
+          <ul class="spec" id="spec">
+            <li><b>墙顶</b><span>暖白乳胶漆，客厅回字形吊顶四周藏 3000K 灯带，筒灯 3500K 避开沙发正上方。</span></li>
+            <li><b>地面</b><span>全屋 750×1500 柔光米白地砖通铺，墙地对缝、不设过门石；厨卫阳台换同色系防滑砖。</span></li>
+            <li><b>木作</b><span>浅橡木饰面书柜、餐桌与衣柜；柜门哑光、开放格木纹，暗拉手。</span></li>
+            <li><b>软装</b><span>米白棉麻沙发，陶土与鼠尾草绿抱枕；亚麻窗帘 + 白纱，黄铜落地灯与壁灯补光。</span></li>
+            <li><b>3D</b><span>当前风格已同步到可旋转的 3D 场景，可在页尾进入核对尺寸与门窗位置。</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="notes">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-no">05</span><h2>设计说明</h2><span class="sec-en">Notes</span></div>
+      <div class="notes">
+        <p>三套风格共用同一套硬装基底与家具尺度，只更换颜色、材质与软装，方便在预算与效果之间做取舍。</p>
+        <p>开放式厨房沿北墙一字布置 2.5m 橱柜、水槽与灶台，冰箱归位东墙；南侧保留 3.6m 无门洞口，餐桌退让 0.8m 留出出菜通道。</p>
+        <p>入户门位于东侧，餐桌与门扇保持 2.4m 距离；玄关经客厅东侧直达厨房，不穿越餐区。</p>
+        <p>东墙 2.3m 书柜 + 1.6m 书桌形成第二工作区，书柜已南移避让南次卧门；封闭阳台西侧为洗烘区，南向 6.2m 大窗保留。</p>
+        <p>北向两间次卧床头靠北窗、衣柜沿南墙；主卧床头靠西，南次卧床头靠东，均避开门扇开启。</p>
+        <p>本图为方案阶段布置图，家具与柜体尺寸以现场复尺为准；门扇开启方向、下水立管位置需现场复核。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="wrap cta-in">
+      <div>
+        <h2>在 3D 里走一遍</h2>
+        <p>当前选中：<span id="cta-style">奶油暖木</span> · 可自由旋转、缩放，对照平面图核对每个房间的家具与门窗位置。</p>
+      </div>
+      <a class="btn" href="./?scene=your-house-warm&pos=9.7,1.65,6.3&target=4.4,1.0,8.8" data-scene-link>进入 3D 漫游 &rarr;</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>户型方案 · 四室两厅两卫 · 143㎡ 实例 · 方案设计 2026.10.23</span>
+    <span>Qoder 空间设计 · 方案阶段 · 三套风格</span>
+  </div>
+</footer>
+
+<script>
+const STYLES = {
+  warm: {
+    name: '奶油暖木',
+    metaSub: 'Warm Cream · 暖木白',
+    accentWood: '#a87f56',
+    accentBg: '#2f4a3f',
+    scene: './?scene=your-house-warm&pos=9.7,1.65,6.3&target=4.4,1.0,8.8',
+    hero: '客厅 · 奶油暖木：米白墙、橡木与亚麻，午后光落在沙发上',
+    swatches: [
+      ['#e7ddcc', '暖白乳胶漆', '全屋墙面 / 顶面'],
+      ['#ded2be', '柔光地砖', '全屋通铺 · 750×1500'],
+      ['#c9beac', '莱姆石岩板', '电视墙 / 台面'],
+      ['#b18a5f', '浅橡木', '书柜 / 餐桌 / 衣柜'],
+      ['#d8cebb', '棉麻布艺', '沙发 / 窗帘 / 床品'],
+      ['#a9854e', '黄铜五金', '灯具 / 拉手 / 收边'],
+    ],
+    spec: [
+      ['墙顶', '暖白乳胶漆，客厅回字形吊顶四周藏 3000K 灯带，筒灯 3500K 避开沙发正上方。'],
+      ['地面', '全屋 750×1500 柔光米白地砖通铺，墙地对缝、不设过门石；厨卫阳台换同色系防滑砖。'],
+      ['木作', '浅橡木饰面书柜、餐桌与衣柜；柜门哑光、开放格木纹，暗拉手。'],
+      ['软装', '米白棉麻沙发，陶土与鼠尾草绿抱枕；亚麻窗帘 + 白纱，黄铜落地灯与壁灯补光。'],
+      ['3D', '当前风格已同步到可旋转的 3D 场景，可在页尾进入核对尺寸与门窗位置。'],
+    ],
+  },
+  grey: {
+    name: '现代灰调',
+    metaSub: 'Modern Grey · 烟熏橡木',
+    accentWood: '#6f6a61',
+    accentBg: '#34383a',
+    scene: './?scene=your-house-grey&pos=9.7,1.65,6.3&target=4.4,1.0,8.8',
+    hero: '客厅 · 现代灰调：浅灰墙、烟熏橡木与黑色金属，干净利落',
+    swatches: [
+      ['#dcdcd7', '浅灰乳胶漆', '全屋墙面 / 顶面'],
+      ['#d1d2cf', '冷灰地砖', '全屋通铺 · 750×1500'],
+      ['#c3c4c1', '水泥质感岩板', '电视墙 / 台面'],
+      ['#7d6a58', '烟熏橡木', '书柜 / 餐桌 / 衣柜'],
+      ['#85827b', '灰米布艺', '沙发 / 窗帘 / 床品'],
+      ['#2e2f30', '黑色金属', '灯具 / 桌腿 / 五金'],
+    ],
+    spec: [
+      ['墙顶', '浅灰乳胶漆，顶面保持白色；客厅回字形吊顶内藏 3500K 灯带，光线偏中性。'],
+      ['地面', '全屋 750×1500 冷灰柔光地砖通铺，低反射、耐看，家具边界更清晰。'],
+      ['木作', '烟熏橡木饰面书柜、餐桌与衣柜；黑色金属桌腿与拉手，收口干净。'],
+      ['软装', '灰米布艺沙发，锈橙与橄榄绿抱枕；灰色亚麻窗帘，黑色环形吊灯与落地灯。'],
+      ['3D', '当前风格已同步到可旋转的 3D 场景，可在页尾进入核对尺寸与门窗位置。'],
+    ],
+  },
+  dark: {
+    name: '深色雅奢',
+    metaSub: 'Dark Luxe · 胡桃与丝绒',
+    accentWood: '#8a6b45',
+    accentBg: '#26231f',
+    scene: './?scene=your-house-dark&pos=9.7,1.65,6.3&target=4.4,1.0,8.8',
+    hero: '客厅 · 深色雅奢：暖灰墙、深胡桃与墨绿丝绒，黄铜收边',
+    swatches: [
+      ['#cfc6b7', '暖灰艺术漆', '全屋墙面 / 顶面'],
+      ['#d8cbb7', '米色石纹砖', '全屋通铺 · 750×1500'],
+      ['#575147', '深色岩板', '电视墙 / 台面'],
+      ['#4c3827', '深胡桃木', '书柜 / 餐桌 / 衣柜'],
+      ['#46564a', '墨绿丝绒', '沙发 / 单椅 / 床尾凳'],
+      ['#b08a52', '黄铜五金', '灯具 / 拉手 / 收边'],
+    ],
+    spec: [
+      ['墙顶', '暖灰艺术漆，顶面奶油白；客厅回字形吊顶内藏 2700K 灯带，整体氛围偏暖。'],
+      ['地面', '全屋 750×1500 米色石纹砖通铺，柔光面，深色家具落上去更稳。'],
+      ['木作', '深胡桃木饰面书柜、餐桌与衣柜；黄铜拉手与收边，柜内藏灯带。'],
+      ['软装', '墨绿丝绒沙发，焦糖与米色抱枕；深色亚麻窗帘，黄铜壁灯与玻璃球吊灯。'],
+      ['3D', '当前风格已同步到可旋转的 3D 场景，可在页尾进入核对尺寸与门窗位置。'],
+    ],
+  },
+};
+
+const params = new URLSearchParams(location.search);
+const stored = (() => { try { return localStorage.getItem('heyue-style'); } catch { return null; } })();
+const initial = STYLES[params.get('style')] ? params.get('style') : (STYLES[stored] ? stored : 'warm');
+
+function applyStyle(key) {
+  const s = STYLES[key];
+  if (!s) return;
+  document.documentElement.style.setProperty('--wood', s.accentWood);
+  document.documentElement.style.setProperty('--accent', s.accentBg);
+  document.querySelectorAll('.style-card').forEach((card) => {
+    const on = card.dataset.style === key;
+    card.classList.toggle('is-active', on);
+    card.setAttribute('aria-pressed', String(on));
+  });
+  document.querySelectorAll('img[data-shot]').forEach((img) => {
+    const src = `renders/${key}/${img.dataset.shot}.png`;
+    if (img.getAttribute('src') !== src) img.src = src;
+  });
+  document.getElementById('hero-caption').textContent = s.hero;
+  document.getElementById('hero-badge').textContent = `当前方案 · ${s.name}`;
+  document.getElementById('style-meta-value').textContent = s.name;
+  document.getElementById('style-meta-sub').textContent = s.metaSub;
+  document.getElementById('cta-style').textContent = s.name;
+  document.getElementById('swatches').innerHTML = s.swatches.map(([color, name, desc]) =>
+    `<div class="swatch"><i style="background:${color}"></i><div><b>${name}</b><span>${desc}</span></div></div>`
+  ).join('');
+  document.getElementById('spec').innerHTML = s.spec.map(([label, text]) =>
+    `<li><b>${label}</b><span>${text}</span></li>`
+  ).join('');
+  document.querySelectorAll('[data-scene-link]').forEach((a) => { a.href = s.scene; });
+  document.title = `户型方案 · ${s.name} | 方案汇报`;
+  try { localStorage.setItem('heyue-style', key); } catch {}
+  history.replaceState(null, '', `${location.pathname}?style=${key}${location.hash}`);
+}
+
+document.querySelectorAll('.style-card').forEach((card) => {
+  card.addEventListener('click', () => applyStyle(card.dataset.style));
+});
+applyStyle(initial);
+</script>
+</body>
+</html>

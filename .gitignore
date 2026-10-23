@@ -1,0 +1,10 @@
+node_modules/
+dist/
+dist-pages/
+.vite/
+*.log
+.DS_Store
+Thumbs.db
+input/
+public/plans/
+public/plan-check.html

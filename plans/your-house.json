@@ -1,0 +1,535 @@
+{
+  "name": "我家 143户型",
+  "note": "x=自西(轴1)向东, z=自北(轴G)向南, 米。轴z: G=0 F=1.1 E=3.5 D=4.9 C=6.4 B=9.9 A=11.0；轴x: 1=0 3=3.8 6=10.4 8=13.6。items 的 rotation 单位为度：0=家具正面朝南(+z)，90=朝东(+x)，-90=朝西(-x)，180=朝北(-z)",
+  "level": {
+    "height": 2.95,
+    "wallThickness": 0.12
+  },
+  "rooms": [
+    {
+      "name": "北次卧A",
+      "kind": "bedroom",
+      "rect": [
+        0,
+        0,
+        2.9,
+        3.5
+      ],
+      "doors": [
+        {
+          "wallIndex": 2,
+          "t": 0.1,
+          "width": 0.8
+        }
+      ],
+      "windows": [
+        {
+          "wallIndex": 0,
+          "t": 0.5,
+          "width": 1.5,
+          "height": 1.5,
+          "sillHeight": 0.9
+        }
+      ]
+    },
+    {
+      "name": "北次卧B",
+      "kind": "bedroom",
+      "rect": [
+        2.9,
+        0,
+        6,
+        3.5
+      ],
+      "doors": [
+        {
+          "wallIndex": 2,
+          "t": 0.1,
+          "width": 0.8
+        }
+      ],
+      "windows": [
+        {
+          "wallIndex": 0,
+          "t": 0.5,
+          "width": 1.5,
+          "height": 1.5,
+          "sillHeight": 0.9
+        }
+      ]
+    },
+    {
+      "name": "厨房(开放)",
+      "kind": "kitchen",
+      "rect": [
+        6,
+        0,
+        10.4,
+        3.5
+      ],
+      "windows": [
+        {
+          "wallIndex": 0,
+          "t": 0.65,
+          "width": 1.4,
+          "height": 1.3,
+          "sillHeight": 1.1
+        }
+      ],
+      "openings": [
+        {
+          "wallIndex": 2,
+          "t": 0.5,
+          "width": 3.6
+        }
+      ]
+    },
+    {
+      "name": "公共卫生间",
+      "kind": "bathroom",
+      "rect": [
+        0,
+        3.5,
+        2.4,
+        4.9
+      ],
+      "windows": [
+        {
+          "wallIndex": 3,
+          "t": 0.5,
+          "width": 0.8,
+          "height": 0.8,
+          "sillHeight": 1.8
+        }
+      ],
+      "note": "外侧是洗手台开口,内层才有门",
+      "doors": [
+        {
+          "wallIndex": 1,
+          "t": 0.27,
+          "width": 0.75
+        }
+      ]
+    },
+    {
+      "name": "门厅",
+      "kind": "entry",
+      "rect": [
+        2.4,
+        3.5,
+        3.8,
+        4.9
+      ],
+      "note": "无障碍敞口,③-E-D 上无门"
+    },
+    {
+      "name": "客厅餐厅",
+      "kind": "living",
+      "rect": [
+        3.8,
+        3.5,
+        10.4,
+        9.9
+      ],
+      "doors": [
+        {
+          "wallIndex": 1,
+          "t": 0.17,
+          "width": 1.1,
+          "style": "entry"
+        }
+      ],
+      "windows": [],
+      "openings": [
+        {
+          "wallIndex": 3,
+          "t": 0.86,
+          "width": 1.2
+        },
+        {
+          "wallIndex": 2,
+          "t": 0.5,
+          "width": 6
+        }
+      ]
+    },
+    {
+      "name": "封闭阳台",
+      "kind": "laundry",
+      "rect": [
+        3.8,
+        9.9,
+        10.4,
+        11
+      ],
+      "doors": [
+        {
+          "wallIndex": 0,
+          "t": 0.5,
+          "width": 5.8
+        },
+        {
+          "wallIndex": 1,
+          "t": 0.5,
+          "width": 0.9
+        }
+      ],
+      "windows": [
+        {
+          "wallIndex": 2,
+          "t": 0.5,
+          "width": 6.2,
+          "height": 2,
+          "sillHeight": 0.5
+        }
+      ],
+      "note": "与客厅全开连通(B轴无墙,仅两端墙垛),南侧 6.2m 大窗"
+    },
+    {
+      "name": "主卫",
+      "kind": "bathroom",
+      "rect": [
+        0,
+        4.9,
+        1.9,
+        6.4
+      ],
+      "doors": [
+        {
+          "wallIndex": 1,
+          "t": 0.5,
+          "width": 0.7
+        }
+      ],
+      "windows": [
+        {
+          "wallIndex": 3,
+          "t": 0.5,
+          "width": 0.7,
+          "height": 0.9,
+          "sillHeight": 1.8
+        }
+      ]
+    },
+    {
+      "name": "主卧",
+      "kind": "bedroom",
+      "polygon": [
+        [
+          1.9,
+          4.9
+        ],
+        [
+          3.8,
+          4.9
+        ],
+        [
+          3.8,
+          11
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          6.4
+        ],
+        [
+          1.9,
+          6.4
+        ]
+      ],
+      "doors": [
+        {
+          "wallIndex": 1,
+          "t": 0.115,
+          "width": 0.9
+        }
+      ],
+      "windows": [
+        {
+          "wallIndex": 2,
+          "t": 0.5,
+          "width": 1.6,
+          "height": 1.5,
+          "sillHeight": 0.9
+        }
+      ]
+    },
+    {
+      "name": "南次卧",
+      "kind": "bedroom",
+      "rect": [
+        10.4,
+        6.4,
+        13.6,
+        9.9
+      ],
+      "doors": [
+        {
+          "wallIndex": 3,
+          "t": 0.83,
+          "width": 0.9
+        }
+      ],
+      "windows": [
+        {
+          "wallIndex": 2,
+          "t": 0.5,
+          "width": 1.5,
+          "height": 1.5,
+          "sillHeight": 0.9
+        }
+      ]
+    },
+    {
+      "name": "露台(露天)",
+      "kind": "outdoor",
+      "rect": [
+        10.4,
+        9.9,
+        13.6,
+        11
+      ],
+      "note": "6-8-a 开敞窗台,露天无顶",
+      "wallHeight": 0.9
+    }
+  ],
+  "furnish": [
+    "公共卫生间",
+    "主卫"
+  ],
+  "items": [
+    {
+      "assetId": "tv-stand",
+      "x": 4.2,
+      "z": 8.35,
+      "rotation": -90
+    },
+    {
+      "assetId": "coffee-table",
+      "x": 5.8,
+      "z": 8.35,
+      "rotation": -90
+    },
+    {
+      "assetId": "sofa",
+      "x": 7.35,
+      "z": 8.35,
+      "rotation": -90
+    },
+    {
+      "assetId": "kitchen",
+      "x": 7.25,
+      "z": 0.64,
+      "rotation": 0
+    },
+    {
+      "assetId": "stove",
+      "x": 9.1,
+      "z": 0.64,
+      "rotation": 0
+    },
+    {
+      "assetId": "fridge",
+      "x": 9.9,
+      "z": 2.55,
+      "rotation": -90
+    },
+    {
+      "assetId": "washing-machine",
+      "x": 4.35,
+      "z": 10.45,
+      "rotation": 180
+    },
+    {
+      "assetId": "drying-rack",
+      "x": 6.1,
+      "z": 10.45,
+      "rotation": 0
+    },
+    {
+      "assetId": "dining-table",
+      "x": 7.35,
+      "z": 5.55,
+      "rotation": -90
+    },
+    {
+      "assetId": "dining-chair",
+      "x": 6.35,
+      "z": 4.85,
+      "rotation": 90
+    },
+    {
+      "assetId": "dining-chair",
+      "x": 6.35,
+      "z": 5.55,
+      "rotation": 90
+    },
+    {
+      "assetId": "dining-chair",
+      "x": 6.35,
+      "z": 6.25,
+      "rotation": 90
+    },
+    {
+      "assetId": "dining-chair",
+      "x": 8.35,
+      "z": 4.85,
+      "rotation": -90
+    },
+    {
+      "assetId": "dining-chair",
+      "x": 8.35,
+      "z": 5.55,
+      "rotation": -90
+    },
+    {
+      "assetId": "dining-chair",
+      "x": 8.35,
+      "z": 6.25,
+      "rotation": -90
+    },
+    {
+      "assetId": "double-bed",
+      "x": 1.56,
+      "z": 1.31,
+      "rotation": 0
+    },
+    {
+      "assetId": "bedside-table",
+      "x": 0.31,
+      "z": 0.31,
+      "rotation": 0
+    },
+    {
+      "assetId": "double-bed",
+      "x": 4.26,
+      "z": 1.31,
+      "rotation": 0
+    },
+    {
+      "assetId": "bedside-table",
+      "x": 5.51,
+      "z": 0.31,
+      "rotation": 0
+    },
+    {
+      "assetId": "double-bed",
+      "x": 1.31,
+      "z": 9.4,
+      "rotation": 90
+    },
+    {
+      "assetId": "bedside-table",
+      "x": 0.31,
+      "z": 10.7,
+      "rotation": 0
+    },
+    {
+      "assetId": "double-bed",
+      "x": 12.29,
+      "z": 8.55,
+      "rotation": -90
+    },
+    {
+      "assetId": "bedside-table",
+      "x": 13.29,
+      "z": 7.3,
+      "rotation": 0
+    }
+  ],
+  "joinery": [
+    {
+      "name": "电视墙石材",
+      "x0": 3.8,
+      "z0": 6.9,
+      "x1": 3.94,
+      "z1": 9.5,
+      "h": 2.55,
+      "kind": "stone"
+    },
+    {
+      "name": "电视柜",
+      "x0": 3.95,
+      "z0": 7.35,
+      "x1": 4.45,
+      "z1": 9.35,
+      "h": 0.45,
+      "kind": "wood"
+    },
+    {
+      "name": "书柜",
+      "x0": 10.1,
+      "z0": 6.81,
+      "x1": 10.4,
+      "z1": 9.49,
+      "h": 2.2,
+      "kind": "wood"
+    },
+    {
+      "name": "升降书桌",
+      "x0": 9.24,
+      "z0": 7.35,
+      "x1": 9.96,
+      "z1": 8.95,
+      "h": 0.76,
+      "kind": "wood"
+    },
+    {
+      "name": "主卧衣柜",
+      "x0": 0.06,
+      "z0": 6.5,
+      "x1": 0.66,
+      "z1": 8.4,
+      "h": 2.4,
+      "kind": "cabinet"
+    },
+    {
+      "name": "北次卧A衣柜",
+      "x0": 0.06,
+      "z0": 2.84,
+      "x1": 1.96,
+      "z1": 3.44,
+      "h": 2.4,
+      "kind": "cabinet"
+    },
+    {
+      "name": "北次卧B衣柜",
+      "x0": 3,
+      "z0": 2.84,
+      "x1": 4.8,
+      "z1": 3.44,
+      "h": 2.4,
+      "kind": "cabinet"
+    },
+    {
+      "name": "南次卧衣柜",
+      "x0": 11.4,
+      "z0": 6.46,
+      "x1": 13,
+      "z1": 7.06,
+      "h": 2.4,
+      "kind": "cabinet"
+    },
+    {
+      "name": "公卫外洗手台",
+      "x0": 2.45,
+      "z0": 3.51,
+      "x1": 3.65,
+      "z1": 4.01,
+      "h": 0.82,
+      "kind": "cabinet"
+    },
+    {
+      "name": "主卫洗手台",
+      "x0": 1,
+      "z0": 4.86,
+      "x1": 1.9,
+      "z1": 5.34,
+      "h": 0.82,
+      "kind": "cabinet"
+    }
+  ]
+}

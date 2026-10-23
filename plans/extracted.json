@@ -1,0 +1,163 @@
+{
+  "name": "自动识别结果",
+  "meta": {
+    "source": "public/plans/demo-3br.png",
+    "pxPerM": 100,
+    "wallThicknessM": 0.12,
+    "rooms": 6,
+    "openings": 10
+  },
+  "level": {
+    "height": 2.8,
+    "wallThickness": 0.12
+  },
+  "rooms": [
+    {
+      "name": "房间1",
+      "rect": [
+        0.06,
+        0.06,
+        5.45,
+        4.25
+      ],
+      "area": 22.58,
+      "shape": "rect",
+      "doors": [
+        {
+          "wallIndex": 2,
+          "t": 0.15,
+          "width": 1.1,
+          "exterior": false
+        }
+      ],
+      "windows": [
+        {
+          "wallIndex": 0,
+          "t": 0.5,
+          "width": 2.4,
+          "height": 1.4,
+          "sillHeight": 0.9
+        }
+      ]
+    },
+    {
+      "name": "房间2",
+      "rect": [
+        5.46,
+        0.06,
+        9.65,
+        4.25
+      ],
+      "area": 17.56,
+      "shape": "rect",
+      "doors": [
+        {
+          "wallIndex": 2,
+          "t": 0.3,
+          "width": 0.9,
+          "exterior": false
+        }
+      ],
+      "windows": [
+        {
+          "wallIndex": 1,
+          "t": 0.45,
+          "width": 1.8,
+          "height": 1.4,
+          "sillHeight": 0.9
+        }
+      ]
+    },
+    {
+      "name": "房间3",
+      "rect": [
+        0.06,
+        4.26,
+        9.65,
+        5.45
+      ],
+      "area": 11.41,
+      "shape": "rect",
+      "doors": [
+        {
+          "wallIndex": 2,
+          "t": 0.83,
+          "width": 0.9,
+          "exterior": false
+        },
+        {
+          "wallIndex": 2,
+          "t": 0.5,
+          "width": 0.8,
+          "exterior": false
+        },
+        {
+          "wallIndex": 2,
+          "t": 0.17,
+          "width": 0.8,
+          "exterior": false
+        }
+      ]
+    },
+    {
+      "name": "房间4",
+      "rect": [
+        0.06,
+        5.46,
+        3.25,
+        9.05
+      ],
+      "area": 11.45,
+      "shape": "rect",
+      "windows": [
+        {
+          "wallIndex": 2,
+          "t": 0.5,
+          "width": 1.5,
+          "height": 1.4,
+          "sillHeight": 0.9
+        }
+      ]
+    },
+    {
+      "name": "房间5",
+      "rect": [
+        3.26,
+        5.46,
+        6.45,
+        9.05
+      ],
+      "area": 11.45,
+      "shape": "rect",
+      "windows": [
+        {
+          "wallIndex": 2,
+          "t": 0.5,
+          "width": 1.2,
+          "height": 1.4,
+          "sillHeight": 0.9
+        }
+      ]
+    },
+    {
+      "name": "房间6",
+      "rect": [
+        6.46,
+        5.46,
+        9.65,
+        9.05
+      ],
+      "area": 11.45,
+      "shape": "rect",
+      "windows": [
+        {
+          "wallIndex": 1,
+          "t": 0.5,
+          "width": 0.8,
+          "height": 1.4,
+          "sillHeight": 0.9
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "示例三室两厅（走廊式）",
+  "level": { "height": 2.8, "wallThickness": 0.12 },
+  "rooms": [
+    { "name": "客厅", "kind": "living", "rect": [0, 0, 5.4, 4.2],
+      "door": { "wallIndex": 2, "t": 0.15, "width": 1.1 },
+      "windows": [ { "wallIndex": 0, "t": 0.5, "width": 2.4, "height": 1.5, "sillHeight": 0.9 } ] },
+    { "name": "主卧", "kind": "bedroom", "rect": [5.4, 0, 9.6, 4.2],
+      "door": { "wallIndex": 2, "t": 0.3, "width": 0.9 },
+      "windows": [ { "wallIndex": 1, "t": 0.45, "width": 1.8, "height": 1.5, "sillHeight": 0.9 } ] },
+    { "name": "走廊", "kind": "hallway", "rect": [0, 4.2, 9.6, 5.4] },
+    { "name": "次卧", "kind": "bedroom", "rect": [0, 5.4, 3.2, 9.0],
+      "door": { "wallIndex": 0, "t": 0.5, "width": 0.9 },
+      "windows": [ { "wallIndex": 2, "t": 0.5, "width": 1.5, "height": 1.4, "sillHeight": 0.9 } ] },
+    { "name": "厨房", "kind": "kitchen", "rect": [3.2, 5.4, 6.4, 9.0],
+      "door": { "wallIndex": 0, "t": 0.5, "width": 0.8 },
+      "windows": [ { "wallIndex": 2, "t": 0.5, "width": 1.2, "height": 1.3, "sillHeight": 1.0 } ] },
+    { "name": "卫生间", "kind": "bathroom", "rect": [6.4, 5.4, 9.6, 9.0],
+      "door": { "wallIndex": 0, "t": 0.5, "width": 0.8 },
+      "windows": [ { "wallIndex": 1, "t": 0.5, "width": 0.8, "height": 0.8, "sillHeight": 1.7 } ] }
+  ]
+}

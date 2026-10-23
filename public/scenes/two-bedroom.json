@@ -1,0 +1,798 @@
+{
+  "nodes": {
+    "site_2br": {
+      "object": "node",
+      "id": "site_2br",
+      "type": "site",
+      "parentId": null,
+      "visible": true,
+      "metadata": {},
+      "polygon": {
+        "type": "polygon",
+        "points": [
+          [
+            -15,
+            -15
+          ],
+          [
+            15,
+            -15
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            -15,
+            15
+          ]
+        ]
+      },
+      "children": [
+        "building_2br"
+      ]
+    },
+    "building_2br": {
+      "object": "node",
+      "id": "building_2br",
+      "type": "building",
+      "parentId": "site_2br",
+      "visible": true,
+      "metadata": {},
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "children": [
+        "level_0"
+      ]
+    },
+    "door_front": {
+      "object": "node",
+      "id": "door_front",
+      "type": "door",
+      "parentId": "wall_s",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_s",
+      "position": [
+        0,
+        1.05,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 0.8,
+      "height": 2.1,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "threshold": true,
+      "thresholdHeight": 0.02,
+      "hingesSide": "left",
+      "swingDirection": "inward",
+      "segments": [
+        {
+          "type": "panel",
+          "heightRatio": 0.5,
+          "columnRatios": [
+            1
+          ],
+          "dividerThickness": 0.03,
+          "panelDepth": 0.01,
+          "panelInset": 0.04
+        },
+        {
+          "type": "panel",
+          "heightRatio": 0.5,
+          "columnRatios": [
+            1
+          ],
+          "dividerThickness": 0.03,
+          "panelDepth": 0.01,
+          "panelInset": 0.04
+        }
+      ],
+      "handle": true,
+      "handleHeight": 1.05,
+      "handleSide": "right",
+      "contentPadding": [
+        0.04,
+        0.04
+      ],
+      "doorCloser": false,
+      "panicBar": false,
+      "panicBarHeight": 1
+    },
+    "door_bed1": {
+      "object": "node",
+      "id": "door_bed1",
+      "type": "door",
+      "parentId": "wall_corr_1",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_corr_1",
+      "position": [
+        0,
+        1.05,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 0.8,
+      "height": 2.1,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "threshold": true,
+      "thresholdHeight": 0.02,
+      "hingesSide": "left",
+      "swingDirection": "inward",
+      "segments": [
+        {
+          "type": "panel",
+          "heightRatio": 0.5,
+          "columnRatios": [
+            1
+          ],
+          "dividerThickness": 0.03,
+          "panelDepth": 0.01,
+          "panelInset": 0.04
+        },
+        {
+          "type": "panel",
+          "heightRatio": 0.5,
+          "columnRatios": [
+            1
+          ],
+          "dividerThickness": 0.03,
+          "panelDepth": 0.01,
+          "panelInset": 0.04
+        }
+      ],
+      "handle": true,
+      "handleHeight": 1.05,
+      "handleSide": "right",
+      "contentPadding": [
+        0.04,
+        0.04
+      ],
+      "doorCloser": false,
+      "panicBar": false,
+      "panicBarHeight": 1
+    },
+    "door_bath": {
+      "object": "node",
+      "id": "door_bath",
+      "type": "door",
+      "parentId": "wall_corr_2",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_corr_2",
+      "position": [
+        0,
+        1.05,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 0.8,
+      "height": 2.1,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "threshold": true,
+      "thresholdHeight": 0.02,
+      "hingesSide": "left",
+      "swingDirection": "inward",
+      "segments": [
+        {
+          "type": "panel",
+          "heightRatio": 0.5,
+          "columnRatios": [
+            1
+          ],
+          "dividerThickness": 0.03,
+          "panelDepth": 0.01,
+          "panelInset": 0.04
+        },
+        {
+          "type": "panel",
+          "heightRatio": 0.5,
+          "columnRatios": [
+            1
+          ],
+          "dividerThickness": 0.03,
+          "panelDepth": 0.01,
+          "panelInset": 0.04
+        }
+      ],
+      "handle": true,
+      "handleHeight": 1.05,
+      "handleSide": "right",
+      "contentPadding": [
+        0.04,
+        0.04
+      ],
+      "doorCloser": false,
+      "panicBar": false,
+      "panicBarHeight": 1
+    },
+    "door_bed2": {
+      "object": "node",
+      "id": "door_bed2",
+      "type": "door",
+      "parentId": "wall_corr_3",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_corr_3",
+      "position": [
+        0,
+        1.05,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 0.8,
+      "height": 2.1,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "threshold": true,
+      "thresholdHeight": 0.02,
+      "hingesSide": "left",
+      "swingDirection": "inward",
+      "segments": [
+        {
+          "type": "panel",
+          "heightRatio": 0.5,
+          "columnRatios": [
+            1
+          ],
+          "dividerThickness": 0.03,
+          "panelDepth": 0.01,
+          "panelInset": 0.04
+        },
+        {
+          "type": "panel",
+          "heightRatio": 0.5,
+          "columnRatios": [
+            1
+          ],
+          "dividerThickness": 0.03,
+          "panelDepth": 0.01,
+          "panelInset": 0.04
+        }
+      ],
+      "handle": true,
+      "handleHeight": 1.05,
+      "handleSide": "right",
+      "contentPadding": [
+        0.04,
+        0.04
+      ],
+      "doorCloser": false,
+      "panicBar": false,
+      "panicBarHeight": 1
+    },
+    "window_living_a": {
+      "object": "node",
+      "id": "window_living_a",
+      "type": "window",
+      "parentId": "wall_s",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_s",
+      "position": [
+        0,
+        1.2,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 1.5,
+      "height": 1.2,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "columnRatios": [
+        1
+      ],
+      "rowRatios": [
+        1
+      ],
+      "columnDividerThickness": 0.03,
+      "rowDividerThickness": 0.03,
+      "sill": true,
+      "sillDepth": 0.08,
+      "sillThickness": 0.03
+    },
+    "window_living_b": {
+      "object": "node",
+      "id": "window_living_b",
+      "type": "window",
+      "parentId": "wall_e",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_e",
+      "position": [
+        0,
+        1.2,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 1.2,
+      "height": 1.2,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "columnRatios": [
+        1
+      ],
+      "rowRatios": [
+        1
+      ],
+      "columnDividerThickness": 0.03,
+      "rowDividerThickness": 0.03,
+      "sill": true,
+      "sillDepth": 0.08,
+      "sillThickness": 0.03
+    },
+    "window_bed1": {
+      "object": "node",
+      "id": "window_bed1",
+      "type": "window",
+      "parentId": "wall_n",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_n",
+      "position": [
+        0,
+        1.2,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 1.2,
+      "height": 1.2,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "columnRatios": [
+        1
+      ],
+      "rowRatios": [
+        1
+      ],
+      "columnDividerThickness": 0.03,
+      "rowDividerThickness": 0.03,
+      "sill": true,
+      "sillDepth": 0.08,
+      "sillThickness": 0.03
+    },
+    "window_bath": {
+      "object": "node",
+      "id": "window_bath",
+      "type": "window",
+      "parentId": "wall_n",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_n",
+      "position": [
+        0,
+        1.2,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 0.6,
+      "height": 1.2,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "columnRatios": [
+        1
+      ],
+      "rowRatios": [
+        1
+      ],
+      "columnDividerThickness": 0.03,
+      "rowDividerThickness": 0.03,
+      "sill": true,
+      "sillDepth": 0.08,
+      "sillThickness": 0.03
+    },
+    "window_bed2": {
+      "object": "node",
+      "id": "window_bed2",
+      "type": "window",
+      "parentId": "wall_n",
+      "visible": true,
+      "metadata": {},
+      "wallId": "wall_n",
+      "position": [
+        0,
+        1.2,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "width": 1.2,
+      "height": 1.2,
+      "frameThickness": 0.05,
+      "frameDepth": 0.07,
+      "columnRatios": [
+        1
+      ],
+      "rowRatios": [
+        1
+      ],
+      "columnDividerThickness": 0.03,
+      "rowDividerThickness": 0.03,
+      "sill": true,
+      "sillDepth": 0.08,
+      "sillThickness": 0.03
+    },
+    "wall_n": {
+      "object": "node",
+      "id": "wall_n",
+      "type": "wall",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "children": [
+        "window_bed1",
+        "window_bath",
+        "window_bed2"
+      ],
+      "thickness": 0.1,
+      "start": [
+        -5,
+        -4
+      ],
+      "end": [
+        5,
+        -4
+      ],
+      "frontSide": "unknown",
+      "backSide": "unknown"
+    },
+    "wall_e": {
+      "object": "node",
+      "id": "wall_e",
+      "type": "wall",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "children": [
+        "window_living_b"
+      ],
+      "thickness": 0.1,
+      "start": [
+        5,
+        -4
+      ],
+      "end": [
+        5,
+        4
+      ],
+      "frontSide": "unknown",
+      "backSide": "unknown"
+    },
+    "wall_s": {
+      "object": "node",
+      "id": "wall_s",
+      "type": "wall",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "children": [
+        "door_front",
+        "window_living_a"
+      ],
+      "thickness": 0.1,
+      "start": [
+        5,
+        4
+      ],
+      "end": [
+        -5,
+        4
+      ],
+      "frontSide": "unknown",
+      "backSide": "unknown"
+    },
+    "wall_w": {
+      "object": "node",
+      "id": "wall_w",
+      "type": "wall",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "children": [],
+      "thickness": 0.1,
+      "start": [
+        -5,
+        4
+      ],
+      "end": [
+        -5,
+        -4
+      ],
+      "frontSide": "unknown",
+      "backSide": "unknown"
+    },
+    "wall_corr_1": {
+      "object": "node",
+      "id": "wall_corr_1",
+      "type": "wall",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "children": [
+        "door_bed1"
+      ],
+      "thickness": 0.1,
+      "start": [
+        -5,
+        0
+      ],
+      "end": [
+        -1,
+        0
+      ],
+      "frontSide": "unknown",
+      "backSide": "unknown"
+    },
+    "wall_corr_2": {
+      "object": "node",
+      "id": "wall_corr_2",
+      "type": "wall",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "children": [
+        "door_bath"
+      ],
+      "thickness": 0.1,
+      "start": [
+        -1,
+        0
+      ],
+      "end": [
+        2,
+        0
+      ],
+      "frontSide": "unknown",
+      "backSide": "unknown"
+    },
+    "wall_corr_3": {
+      "object": "node",
+      "id": "wall_corr_3",
+      "type": "wall",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "children": [
+        "door_bed2"
+      ],
+      "thickness": 0.1,
+      "start": [
+        2,
+        0
+      ],
+      "end": [
+        5,
+        0
+      ],
+      "frontSide": "unknown",
+      "backSide": "unknown"
+    },
+    "wall_part_1": {
+      "object": "node",
+      "id": "wall_part_1",
+      "type": "wall",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "children": [],
+      "thickness": 0.1,
+      "start": [
+        -1,
+        -4
+      ],
+      "end": [
+        -1,
+        0
+      ],
+      "frontSide": "unknown",
+      "backSide": "unknown"
+    },
+    "wall_part_2": {
+      "object": "node",
+      "id": "wall_part_2",
+      "type": "wall",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "children": [],
+      "thickness": 0.1,
+      "start": [
+        2,
+        -4
+      ],
+      "end": [
+        2,
+        0
+      ],
+      "frontSide": "unknown",
+      "backSide": "unknown"
+    },
+    "zone_living": {
+      "object": "node",
+      "id": "zone_living",
+      "type": "zone",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "name": "Living / Kitchen",
+      "color": "#60a5fa",
+      "polygon": [
+        [
+          -5,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          -5,
+          4
+        ]
+      ]
+    },
+    "zone_bed1": {
+      "object": "node",
+      "id": "zone_bed1",
+      "type": "zone",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "name": "Bedroom 1",
+      "color": "#f472b6",
+      "polygon": [
+        [
+          -5,
+          -4
+        ],
+        [
+          -1,
+          -4
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -5,
+          0
+        ]
+      ]
+    },
+    "zone_bath": {
+      "object": "node",
+      "id": "zone_bath",
+      "type": "zone",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "name": "Bath",
+      "color": "#a7f3d0",
+      "polygon": [
+        [
+          -1,
+          -4
+        ],
+        [
+          2,
+          -4
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ]
+    },
+    "zone_bed2": {
+      "object": "node",
+      "id": "zone_bed2",
+      "type": "zone",
+      "parentId": "level_0",
+      "visible": true,
+      "metadata": {},
+      "name": "Bedroom 2",
+      "color": "#fcd34d",
+      "polygon": [
+        [
+          2,
+          -4
+        ],
+        [
+          5,
+          -4
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    "level_0": {
+      "object": "node",
+      "id": "level_0",
+      "type": "level",
+      "parentId": "building_2br",
+      "visible": true,
+      "metadata": {},
+      "level": 0,
+      "height": 2.5,
+      "children": [
+        "wall_n",
+        "wall_e",
+        "wall_s",
+        "wall_w",
+        "wall_corr_1",
+        "wall_corr_2",
+        "wall_corr_3",
+        "wall_part_1",
+        "wall_part_2",
+        "zone_living",
+        "zone_bed1",
+        "zone_bath",
+        "zone_bed2"
+      ]
+    }
+  },
+  "rootNodeIds": [
+    "site_2br"
+  ]
+}

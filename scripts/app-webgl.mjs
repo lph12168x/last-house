@@ -1,0 +1,12 @@
+import puppeteer from "puppeteer";
+const url = process.argv[2] || "http://127.0.0.1:4173/?scene=your-house";
+const browser = await puppeteer.launch({headless:false,executablePath:"/home/latte/.cache/puppeteer/chrome/linux-152.0.7977.75/chrome-linux64/chrome",args:["--no-sandbox","--disable-setuid-sandbox","--disable-features=WebGPU","--use-gl=angle","--use-angle=swiftshader","--window-size=1600,1000"]});
+const page = await browser.newPage();
+await page.setViewport({width:1600,height:1000});
+const logs=[]; page.on("console",m=>{if(m.type()==="error")logs.push(m.text().slice(0,200));}); page.on("pageerror",e=>logs.push(String(e).slice(0,200)));
+await page.goto(url,{waitUntil:"domcontentloaded",timeout:60000});
+await page.waitForFunction("window.__sceneReady === true",{timeout:120000}).catch(()=>{});
+await new Promise(r=>setTimeout(r,15000));
+await page.screenshot({path:"/tmp/app-webgl.png"});
+console.log("errors",logs.length?logs.slice(0,4):"none");
+await browser.close();
